@@ -1,8 +1,8 @@
 <p align="center">
 </p>
 
-<h1 align="center">API -Node.js + MongoDB</h1>
-<p align="center">A small CRUD api to study</p>
+<h1 align="center">API -Node.js + MongoDB 🍃</h1>
+<h2 align="center">A API with Node.js + MongoDB, CRUD and to Study</h2>
 
 <br />
 
@@ -14,6 +14,13 @@ pnpm i
 pnpm run dev
 
 ```
+## Technologies
+
+- Node.js
+- MongoDB Atlas (Mongoose)
+- Fastify
+- Rest Client (Client HTTP)
+
 ## Functionalities
 
 <table>
@@ -64,3 +71,15 @@ pnpm run dev
     </tr>
   </tbody>
 </table>
+
+### Important 
+
+- If you don't want to install some Http Client, not problem you can access the file 
+
+~~~bash
+
+client.http
+
+~~~
+
+- In the root directory to send requests
