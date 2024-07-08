@@ -1,0 +1,37 @@
+POST http://localhost:3000/api/fruits
+Content-Type: application/json
+
+{
+  "name": "Maçã",
+  "color": "Vermelha",
+  "quantity": 10
+}
+
+###
+
+GET http://localhost:3000/api/fruits
+Content-Type: application/json
+
+###
+
+
+GET http://localhost:3000/api/fruits/668bf37e1c36caa7a8dd910b
+Content-Type: application/json
+
+###
+
+PUT http://localhost:3000/api/fruits/668bf37e1c36caa7a8dd910b
+Content-Type: application/json
+
+{
+  "name": "Maçã Verde",
+  "color": "Verde",
+  "quantity": 5
+}
+
+###
+
+DELETE http://localhost:3000/api/fruits/668bf37e1c36caa7a8dd910b
+Content-Type: application/json
+
+###
