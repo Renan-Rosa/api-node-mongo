@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// Schema - Model
 const fruitSchema = new mongoose.Schema({
   name: {
     type: String,

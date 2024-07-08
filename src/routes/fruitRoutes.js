@@ -1,5 +1,6 @@
 const fruitController = require('../controllers/fruitController');
 
+// Routes
 async function routes(fastify, options) {
   fastify.get('/', fruitController.getAllFruits);
   fastify.get('/:id', fruitController.getFruitById);

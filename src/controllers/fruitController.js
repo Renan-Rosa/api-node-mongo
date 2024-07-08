@@ -1,9 +1,8 @@
 const Fruit = require('../models/fruitModel');
 
-// Obter todas as frutas
+// GET - Find all the fruits
 exports.getAllFruits = async (request, reply) => {
   try {
-    console.log("Obtendo todas as frutas")
     const fruits = await Fruit.find();
     reply.send(fruits);
   } catch (err) {
@@ -11,13 +10,12 @@ exports.getAllFruits = async (request, reply) => {
   }
 };
 
-// Obter uma fruta por ID
+// GET - Find one fruit by ID
 exports.getFruitById = async (request, reply) => {
   try {
-    console.log("Obtendo fruta pelo ID")
     const fruit = await Fruit.findById(request.params.id);
     if (!fruit) {
-      reply.code(404).send({ message: 'Fruta não encontrada' });
+      reply.code(404).send({ message: 'Fruit was not found' });
       return;
     }
     reply.send(fruit);
@@ -26,10 +24,9 @@ exports.getFruitById = async (request, reply) => {
   }
 };
 
-// Criar uma nova fruta
+// POST - Create a fruit
 exports.createFruit = async (request, reply) => {
   try {
-    console.log("Criando um nova fruta")
     const newFruit = new Fruit(request.body);
     const savedFruit = await newFruit.save();
     reply.code(201).send(savedFruit);
@@ -38,13 +35,12 @@ exports.createFruit = async (request, reply) => {
   }
 };
 
-// Atualizar uma fruta por ID
+// PUT - Update a fruit by ID
 exports.updateFruit = async (request, reply) => {
   try {
-    console.log("Atualizando uma fruta pelo ID")
     const updatedFruit = await Fruit.findByIdAndUpdate(request.params.id, request.body, { new: true });
     if (!updatedFruit) {
-      reply.code(404).send({ message: 'Fruta não encontrada' });
+      reply.code(404).send({ message: 'Fruit was not found' });
       return;
     }
     reply.send(updatedFruit);
@@ -53,16 +49,15 @@ exports.updateFruit = async (request, reply) => {
   }
 };
 
-// Deletar uma fruta por ID
+// DELETE - Delete a fruit by ID
 exports.deleteFruit = async (request, reply) => {
   try {
-    console.log("Deletando uma fruta pelo ID")
     const deletedFruit = await Fruit.findByIdAndDelete(request.params.id);
     if (!deletedFruit) {
-      reply.code(404).send({ message: 'Fruta não encontrada' });
+      reply.code(404).send({ message: 'Fruit was not found' });
       return;
     }
-    reply.send({ message: 'Fruta deletada com sucesso' });
+    reply.send({ message: 'Fruit deleted' });
   } catch (err) {
     reply.code(500).send(err);
   }

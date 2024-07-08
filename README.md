@@ -4,19 +4,6 @@
 <h1 align="center">API -Node.js + MongoDB</h1>
 <p align="center">A small CRUD api to study</p>
 
-<h3 align="center">
-
-  <!-- Version -->
-  <a href="https://github.com/Renan-Rosa/api-node-mongo/releases">
-    <img alt="releases url" src="https://img.shields.io/github/v/release/Renan-Rosa/api-node-mongo?style=for-the-badge&labelColor=1C1E26&color=FF79C6">
-  </a>  
-  
- <!-- License -->
-  <a href="./LICENSE" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/badge/license%20-MIT-1C1E26?style=for-the-badge&labelColor=1C1E26&color=FF79C6">
-  </a>
-</h3>
-
 <br />
 
 

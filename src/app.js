@@ -1,10 +1,10 @@
 const fastify = require('fastify')({ logger: true });
 const mongoose = require('mongoose');
 const fruitRoutes = require('./routes/fruitRoutes');
-require('dotenv').config(); // Carregar variáveis de ambiente do arquivo .env
+require('dotenv').config(); // Load the environments
 
 
-// Conectar ao MongoDB
+// Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -14,11 +14,11 @@ mongoose.connect(process.env.MONGO_URI, {
   fastify.log.error(err);
 });
 
-// Registrar rotas
+// Routes Register
 fastify.register(fruitRoutes, { prefix: '/api/fruits' });
 
 
-// Inicializa a API
-fastify.listen({ port: 3000, host: '0.0.0.0' }).then(() => {
-    console.log("HTTP server running 🚀")
+// Initialized API
+fastify.listen({ port: process.env.PORT, host: '0.0.0.0' }).then(() => {
+    console.log(`HTTP server running 🚀 on port ${process.env.PORT}`)
 })
