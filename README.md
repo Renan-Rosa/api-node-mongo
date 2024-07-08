@@ -52,7 +52,7 @@ pnpm run dev
       <td>List all the fruits after created</td>
       <td>/api/fruit</td>
       <td>GET</td>
-      <td>GET</td>
+      <td>✅</td>
     </tr>
       <tr>
       <td>Find a fruit by ID</td>
