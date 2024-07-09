@@ -1,8 +1,13 @@
 const fastify = require('fastify')({ logger: true });
+const cors = require('@fastify/cors')
 const mongoose = require('mongoose');
 const fruitRoutes = require('./routes/fruitRoutes');
 require('dotenv').config(); // Load the environments
 
+// Access CORS 
+fastify.register(cors, {
+  origin: true // true = All the endpoints
+})
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, {
